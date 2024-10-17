@@ -1,0 +1,158 @@
+{
+  "scriptId": "314",
+  "url": "file:///K:/Users/Benjamin%20M/Documents/GitHub/Deno/project_one/main_test.ts",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 0, "endOffset": 2802, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "<instance_members_initializer>",
+      "ranges": [{ "startOffset": 97, "endOffset": 120, "count": 6 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "Test",
+      "ranges": [
+        { "startOffset": 124, "endOffset": 2146, "count": 6 },
+        { "startOffset": 238, "endOffset": 340, "count": 0 },
+        { "startOffset": 347, "endOffset": 451, "count": 0 },
+        { "startOffset": 458, "endOffset": 576, "count": 0 },
+        { "startOffset": 583, "endOffset": 681, "count": 0 },
+        { "startOffset": 688, "endOffset": 800, "count": 0 },
+        { "startOffset": 807, "endOffset": 915, "count": 0 },
+        { "startOffset": 922, "endOffset": 1036, "count": 0 },
+        { "startOffset": 1043, "endOffset": 1163, "count": 0 },
+        { "startOffset": 1170, "endOffset": 1251, "count": 0 },
+        { "startOffset": 1258, "endOffset": 1349, "count": 0 },
+        { "startOffset": 1456, "endOffset": 1610, "count": 0 },
+        { "startOffset": 1617, "endOffset": 1777, "count": 0 },
+        { "startOffset": 1784, "endOffset": 1940, "count": 0 },
+        { "startOffset": 1947, "endOffset": 2065, "count": 0 },
+        { "startOffset": 2072, "endOffset": 2136, "count": 0 }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "Test.test",
+      "ranges": [{ "startOffset": 279, "endOffset": 324, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "Test.test",
+      "ranges": [{ "startOffset": 389, "endOffset": 435, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "Test.test",
+      "ranges": [{ "startOffset": 507, "endOffset": 560, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "Test.test",
+      "ranges": [{ "startOffset": 622, "endOffset": 665, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "Test.test",
+      "ranges": [{ "startOffset": 734, "endOffset": 784, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "Test.test",
+      "ranges": [{ "startOffset": 851, "endOffset": 899, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "Test.test",
+      "ranges": [{ "startOffset": 969, "endOffset": 1020, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "Test.test",
+      "ranges": [{ "startOffset": 1093, "endOffset": 1147, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "Test.test",
+      "ranges": [{ "startOffset": 1205, "endOffset": 1235, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "Test.test",
+      "ranges": [{ "startOffset": 1298, "endOffset": 1333, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "Test.test",
+      "ranges": [{ "startOffset": 1397, "endOffset": 1433, "count": 6 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "Test.test",
+      "ranges": [{ "startOffset": 1545, "endOffset": 1594, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "Test.test",
+      "ranges": [{ "startOffset": 1709, "endOffset": 1761, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "Test.test",
+      "ranges": [{ "startOffset": 1874, "endOffset": 1924, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "Test.test",
+      "ranges": [{ "startOffset": 1996, "endOffset": 2049, "count": 0 }],
+      "isBlockCoverage": false
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 2199, "endOffset": 2226, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 2258, "endOffset": 2285, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 2319, "endOffset": 2348, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 2380, "endOffset": 2407, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 2439, "endOffset": 2466, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 2507, "endOffset": 2542, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 2553, "endOffset": 2618, "count": 6 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "bulkTests",
+      "ranges": [{ "startOffset": 2661, "endOffset": 2706, "count": 1 }],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 2687, "endOffset": 2705, "count": 6 }],
+      "isBlockCoverage": true
+    }
+  ]
+}
