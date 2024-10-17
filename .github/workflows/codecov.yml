@@ -12,9 +12,7 @@ jobs:
           deno-version: v2.x # Run with latest stable Deno.
       # Check if the code is formatted according to Deno's default
       # formatting conventions.
-      - run: |
-        deno test -r --coverage=./cov/cov --doc --fail-fast --junit-path=./cov/junit/test.xml --permit-no-files --unstable
-        deno coverage --lcov cov/cov/ > cov/cov.lcov
+      - run: deno test -r --coverage=./cov/cov --doc --fail-fast --junit-path=./cov/junit/test.xml --permit-no-files --unstable && deno coverage --lcov cov/cov/ > cov/cov.lcov
       - name: Upload results to Codecov
         uses: codecov/codecov-action@v4
         with:
