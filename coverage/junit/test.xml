@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="deno test" tests="2" failures="0" errors="0" time="0.124">
-    <testsuite name="./main_test.ts" tests="2" disabled="0" errors="0" failures="0">
-        <testcase name="math" classname="./main_test.ts" time="0.000" line="102" col="8">
-        </testcase>
-        <testcase name="main" classname="./main_test.ts" time="0.000" line="102" col="8">
-        </testcase>
-    </testsuite>
-</testsuites>
