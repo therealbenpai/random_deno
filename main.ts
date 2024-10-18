@@ -1,25 +1,18 @@
-export class MathFunctions {
-  public static add(a: number, b: number): number {
-    return a+b;
-  }
-  public static sub(a: number, b: number): number {
-    return a-b;
-  }
-  public static multi(a: number, b: number): number {
-    return a*b;
-  }
-  public static div(a: number, b: number): number {
-    return a/b;
-  }
-  public static exp(a: number, b: number): number {
-    return a**b;
-  }
-  public static divWithRem(a: number, b: number): number {
-    return a % b;
-  }
-}
+/**
+ * @packageDocumentation
+ * Index (Main) File
+ * 
+ * This is the main file for the game engine.
+ * 
+ * It exports the main game object, which is a singleton object that holds all the data for the game.
+ */
+import Main from '#/objects.ts';
+import { Objects } from '#/collection.ts';
 
-//! Works Like `if __name__ == "__main__"` in Python
-if (import.meta.main) {
-  console.log("Add 2 + 3 =", MathFunctions.add(2, 3));
+export default {
+    Game: new Main.Class.Game({
+        seed: Math.random(),
+    }),
+    Objects,
+    ...Main
 }

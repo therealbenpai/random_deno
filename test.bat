@@ -1,5 +1,5 @@
 @ECHO off
 rem "This is used to remove the old code coverage files"
-rmdir /S /Q cov
-deno test -r --coverage=./cov/cov --doc --fail-fast --junit-path=./cov/junit/test.xml --permit-no-files --unstable
-deno coverage --lcov cov/cov/ > cov/cov.lcov
+rmdir /S /Q coverage
+deno test -r --coverage=./coverage/cov --doc --fail-fast --junit-path=./coverage/junit/test.xml --permit-no-files --unstable
+deno coverage --lcov coverage/cov/ > coverage/cov.lcov

@@ -1,5 +1,6 @@
 import * as assert from "@std/assert";
-import { MathFunctions } from "./main.ts";
+import Main from "./main.ts";
+import MathFunctions from "./math.ts";
 
 type PureTestType = keyof typeof assert
 
@@ -81,8 +82,20 @@ const mathUnitTests = [
   )
 ) as Test<number>[]
 
+const mainUnitTests = [
+  ['main', Main.Game, () => Main.Game]
+].map(
+  (val) => new Test(
+    `main-${val[0] as string}`,
+    val[1] as typeof Main.Game,
+    val[2] as () => typeof Main.Game,
+    'assertExists'
+  )
+) as Test<typeof Main.Game>[]
+
 const bulkTests = [
-  ['math', () => mathUnitTests.forEach(({ test }) => test())]
+  ['math', () => mathUnitTests.forEach(({ test }) => test())],
+  ['main', () => mainUnitTests.forEach(({ test }) => test())]
 ]
 
 for (const test of bulkTests) {
