@@ -959,25 +959,24 @@ export namespace Classes {
 	 */
 	export class InternalData extends EventEmitter implements Interfaces.InternalFunctions {
 		id: number;
-		name: string;
 		type: Enums.DataType | undefined;
+		private _name: string = '';
 		constructor(data: Interfaces.InternalDataInit) {
 			super({ captureRejections: true })
 			this.id = data.id
-			this.name = data.name
 			this.type = data.type
-			Object.defineProperty(this, 'name', {
-				set: d => {
-					if (typeof d !== "string") throw new TypeError("The name must be a string")
-					if (/[^A-Za-z0-9\.\-_ ]/gmi.test(d))
-						throw new TypeError("The name can only contain alphanumeric charactors and the special charactors '-', '.', and '_'");
-					if ((d.length < 4 || d.length > 32))
-						throw new TypeError("The name value must be between 4 and 32 charactors long")
-					this.name = d
-				},
-			})
+			this.name = data.name
 		}
-		public toJSON = () => Object.fromEntries(Object.entries(this).filter(v => typeof v[1] !== "function"));
+		public get name() {
+			return this._name
+		}
+		private set name(d: string) {
+			if (typeof d !== "string") throw new TypeError("The name must be a string");
+			if (/[^A-Za-z0-9\.\-_ ]/gmi.test(d))
+				throw new TypeError("The name can only contain alphanumeric charactors and the special charactors '-', '.', and '_'");
+			this._name = d;
+		}
+		public toJSON = () => Object.fromEntries(Object.entries(this).filter(v => typeof v[1] !== "function" && !v[0].startsWith('_')));
 	}
 	/**
 	 * Enchantment Object
@@ -1109,10 +1108,10 @@ export namespace Classes {
 			}
 			return this
 		}
-		getBaseHealth(): number {
+		public getBaseHealth(): number {
 			return this.hp.base
 		}
-		addBaseHealth(amount: number): this {
+		public addBaseHealth(amount: number): this {
 			if (amount < 0) throw new TypeError("Amount must be a positive integer")
 			this.hp.base += amount;
 			return this
@@ -1251,10 +1250,10 @@ export namespace Classes {
 		slots: Map<number, StorageSlot>;
 		constructor(storageContainerData: Interfaces.StorageContainerInit) {
 			this.availableSlots = storageContainerData.slots;
-			this.slots = new Map(
-				new Array(this.availableSlots)
-					.map((_, i) => [i, new StorageSlot({ id: i, obj: undefined })])
-			)
+			const preslots = new Array(this.availableSlots)
+				.map((_, i) => [i, new StorageSlot({ id: i, obj: undefined })])
+			this.slots = new Map()
+			preslots.forEach(obj => this.slots.set(obj[0] as number, obj[1] as StorageSlot))
 		}
 	}
 }

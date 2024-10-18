@@ -1,8 +1,10 @@
 import * as assert from "@std/assert";
 import Main from "./main.ts";
 import MathFunctions from "./math.ts";
+import Objects from "#/objects.ts";
+import Effect from "#/effects/invisibility.ts";
 
-type PureTestType = keyof typeof assert
+type PureTestType = keyof typeof assert;
 
 class Test<T> {
   name: string;
@@ -93,9 +95,92 @@ const mainUnitTests = [
   )
 ) as Test<typeof Main.Game>[]
 
+const objectUnitTests = [
+  new Test(
+    'object-enchantment',
+    null as unknown as typeof Objects.Class.Enchantment.prototype,
+    () => {
+      const enchant = new Objects.Class.Enchantment({ id: 0, name: 'Testing' }, { id: 0, data: Objects.Const.BlankEnchantmentModifiers })
+      enchant.adjustModifiers('effects.nightVision.activated', true);
+      enchant.getModifier('entityModifiers.globalDefenseModifier');
+      return enchant;
+    },
+    'assertExists'
+  ),
+  new Test(
+    'object-entity',
+    null as unknown as typeof Objects.Class.Entity.prototype,
+    () => {
+      const zeros = {
+        integer: 0,
+        percentage: 0
+      }
+      const entity = new Objects.Class.Entity(
+        { id: 0, name: 'Testing' },
+        {
+          type: Objects.Enum.EntityType.Player,
+          def: {
+            global: zeros,
+            magic: zeros,
+            phys: zeros,
+            psych: zeros,
+          },
+          hp: 0,
+          str: {
+            global: zeros,
+            magic: zeros,
+            phys: zeros,
+            psych: zeros,
+          }
+        }
+      )
+      entity.addBaseHealth(100)
+      entity.clearEffects()
+      entity.addEffect(new Objects.Class.Effect({id: 0, name: 'Testing'}, {stats: {}}))
+      entity.addRemainingHealth(100)
+      entity.takeDamage({amm: 1, type: Objects.Enum.DamageType.Magic})
+      entity.getBaseHealth()
+      entity.getEffects()
+      entity.getRemainingHealth()
+      entity.removeBaseHealth(1)
+      entity.removeRemainingHealth(1)
+      entity.removeEffect(0)
+      return entity;
+    },
+    'assertExists'
+  ),
+  new Test(
+    'object-other',
+    null as unknown,
+    () => {
+      new Objects.Class.Weapon(
+        {id: 0, name: 'Testing'},
+        {enchantments: new Map(), rank: Objects.Enum.MaterialRank.Diamond, toolType: Objects.Enum.ToolType.Shovel},
+        {}
+      )
+      new Objects.Class.Food(
+        {id: 0, name: 'Testing'},
+        {}
+      )
+      new Objects.Class.StorageContainer({
+        slots: 3
+      })
+      return true
+    },
+    'assert'
+  ),
+  new Test(
+    'object-json',
+    { id: 1, type: Objects.Enum.DataType.Tool },
+    () => new Objects.Class.InternalData({ id: 1, name: 'Testing', type: Objects.Enum.DataType.Tool }).toJSON(),
+    'assertEquals'
+  )
+] as Test<unknown>[]
+
 const bulkTests = [
   ['math', () => mathUnitTests.forEach(({ test }) => test())],
-  ['main', () => mainUnitTests.forEach(({ test }) => test())]
+  ['main', () => mainUnitTests.forEach(({ test }) => test())],
+  ['objects', () => objectUnitTests.forEach(({ test }) => test())]
 ]
 
 for (const test of bulkTests) {

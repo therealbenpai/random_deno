@@ -2,7 +2,7 @@ import {Classes, Interfaces, Enums} from "#/objects.ts"
 
 const BlockData: Interfaces.BlockInit = {
 	sprite: '',
-	flags: [],
+	flags: [Enums.BlockFlags.NoBlast],
 	type: Enums.BlockType.Liquid,
 }
 
