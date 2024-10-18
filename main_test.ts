@@ -2,7 +2,6 @@ import * as assert from "@std/assert";
 import Main from "./main.ts";
 import MathFunctions from "./math.ts";
 import Objects from "#/objects.ts";
-import Effect from "#/effects/invisibility.ts";
 
 type PureTestType = keyof typeof assert;
 

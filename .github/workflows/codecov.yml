@@ -1,6 +1,9 @@
-name: Build
+name: Codecov Code Coverage
 
-on: push
+on:
+  - push
+  - workflow_dispatch
+
 
 jobs:
   build:
@@ -9,10 +12,8 @@ jobs:
       - uses: actions/checkout@v3
       - uses: denoland/setup-deno@v1
         with:
-          deno-version: v2.x # Run with latest stable Deno.
-      # Check if the code is formatted according to Deno's default
-      # formatting conventions.
-      - run: deno test -r --coverage=./cov/cov --doc --fail-fast --junit-path=./cov/junit/test.xml --permit-no-files --unstable && deno coverage --lcov cov/cov/ > cov/cov.lcov
+          deno-version: v2.x
+      - run: deno test -r --coverage=./coverage/cov --doc --fail-fast --junit-path=./coverage/junit/test.xml --permit-no-files --unstable && deno coverage --lcov coverage/cov/ > coverage/cov.lcov
       - name: Upload results to Codecov
         uses: codecov/codecov-action@v4
         with:
