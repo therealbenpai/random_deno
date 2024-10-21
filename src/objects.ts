@@ -1,4 +1,7 @@
 // deno-lint-ignore-file no-namespace
+
+import type { Nullable } from "types/helpers";
+
 /**
  * @packageDocumentation
  * Objects Package
@@ -78,7 +81,7 @@ declare namespace Interfaces {
 	/**
 	 * Contains data relating to the damage dealt to an entity
 	 */
-	export interface DamageData {
+	export interface DamageData<T extends Enums.DamageType = Enums.DamageType> {
 		/**
 		 * Amount of damage dealt to the entity
 		 */
@@ -86,7 +89,7 @@ declare namespace Interfaces {
 		/**
 		 * Type of damage taken
 		 */
-		type: Enums.DamageType
+		type: T
 	}
 	/**
 	 * Internal data within the {@link Classes.Effect `Classes.Effect`} class
@@ -134,117 +137,117 @@ declare namespace Interfaces {
 		/**
 		 * Stats Modifiers for items (Tools, Weapons, Food, etc.)
 		 */
-		itemModifiers: {
+		itemModifiers: Nullable<{
 			/**
 			 * Base Efficiency Modifier of a tool (default: `1`)
 			 */
-			efficiencyModifier: number | undefined
+			efficiencyModifier: Nullable<number>;
 			/**
 			 * Physical Attack Modifier of a tool (default: `1`)
 			 */
-			physicalAttackModifier: number | undefined
+			physicalAttackModifier: Nullable<number>;
 			/**
 			 * Magical Attack Modifier of a tool (default: `1`)
 			 */
-			magicAttackModifier: number | undefined
+			magicAttackModifier: Nullable<number>;
 			/**
 			 * Psychological Attack Modifier of a tool (default: `1`)
 			 */
-			psychologicalAttackModifier: number | undefined
+			psychologicalAttackModifier: Nullable<number>;
 			/**
 			 * Global Attack Modifier of a tool (default: `1`)
 			 */
-			globalAttackModifier: number | undefined
+			globalAttackModifier: Nullable<number>;
 			/**
 			 * Base Attack Modifier of a tool (default: `1`)
 			 */
-			baseAttackModifier: number | undefined
+			baseAttackModifier: Nullable<number>;
 			/**
 			 * Durability Modifier of a tool (default: `1`)
 			 */
-			durabilityModifier: number | undefined
-		} | undefined
+			durabilityModifier: Nullable<number>;
+		}>
 		/**
 		 * Stats Modifiers for Entities (Armour, Food Effects, etc.)
 		 */
-		entityModifiers: {
+		entityModifiers: Nullable<{
 			/**
 			 * Physical Attack Modifier of an entity (default: `1`)
 			 */
-			physicalAttackModifier: number | undefined
+			physicalAttackModifier: Nullable<number>;
 			/**
 			 * Magical Attack Modifier of an entity (default: `1`)
 			 */
-			magicAttackModifier: number | undefined
+			magicAttackModifier: Nullable<number>;
 			/**
 			 * Psychological Attack Modifier of an entity (default: `1`)
 			 */
-			psychologicalAttackModifier: number | undefined
+			psychologicalAttackModifier: Nullable<number>;
 			/**
 			 * Global Attack Modifier of an entity (default: `1`)
 			 */
-			globalAttackModifier: number | undefined
+			globalAttackModifier: Nullable<number>;
 			/**
 			 * Base Attack Modifier of an entity (default: `1`)
 			 */
-			baseAttackModifier: number | undefined
+			baseAttackModifier: Nullable<number>;
 			/**
 			 * Physical Defense Modifier of an entity (default: `1`)
 			 */
-			physicalDefenseModifier: number | undefined
+			physicalDefenseModifier: Nullable<number>;
 			/**
 			 * Magical Defense Modifier of an entity (default: `1`)
 			 */
-			magicDefenseModifier: number | undefined
+			magicDefenseModifier: Nullable<number>;
 			/**
 			 * Psychological Defense Modifier of an entity (default: `1`)
 			 */
-			psychologicalDefenseModifier: number | undefined
+			psychologicalDefenseModifier: Nullable<number>;
 			/**
 			 * Global Defense Modifier of an entity (default: `1`)
 			 */
-			globalDefenseModifier: number | undefined
+			globalDefenseModifier: Nullable<number>;
 			/**
 			 * Base Defense Modifier of an entity (default: `1`)
 			 */
-			baseDefenseModifier: number | undefined
+			baseDefenseModifier: Nullable<number>;
 			/**
 			 * Base Health Modifier of an entity (default: `1`)
 			 */
-			healthModifier: number | undefined
+			healthModifier: Nullable<number>;
 			/**
 			 * Base Regeneration Modifier of an entity (default: `1`)
 			 */
-			regenerationModifier: number | undefined
+			regenerationModifier: Nullable<number>;
 			/**
 			 * Base Speed Modifier of an entity (default: `1`)
 			 */
-			speedModifier: number | undefined
+			speedModifier: Nullable<number>;
 			/**
 			 * Base Water-based Movement Modifier of an entity (default: `1`)
 			 */
-			waterMovementModifier: number | undefined
-		} | undefined
+			waterMovementModifier: Nullable<number>;
+		}>
 		/**
 		 * Effects for entities wearing enchanted items (Armour only)
 		 */
-		effects: {
+		effects: Nullable<{
 			/**
 			 * Configurations on if the entity should receive night vision if they have the armour equipped
 			 * (default: {requireFullSet: true, activated: false})
 			 * */
-			nightVision: EnchantmentEffect | undefined
+			nightVision: Nullable<EnchantmentEffect>
 			/**
 			 * Configurations on if the entity should receive water breathing if they have the armour equipped
 			 * (default: {requireFullSet: true, activated: false})
 			 * */
-			waterBreathing: EnchantmentEffect | undefined
+			waterBreathing: Nullable<EnchantmentEffect>
 			/**
 			 * Configurations on if the entity should receive invisibility if they have the armour equipped
 			 * (default: {requireFullSet: true, activated: false})
 			 * */
-			invisibility: EnchantmentEffect | undefined
-		} | undefined
+			invisibility: Nullable<EnchantmentEffect>
+		}>
 	}
 	/**
 	 * Keys found in the objects used in the
@@ -408,55 +411,55 @@ declare namespace Interfaces {
 		/**
 		 * Health Modifier Data
 		 */
-		health?: StatusModification
+		health: Nullable<StatusModification>;
 		/**
 		 * Physical Damage Modifier Data
 		 */
-		physDamage?: StatusModification
+		physDamage: Nullable<StatusModification>;
 		/**
 		 * Magical Damage Modifier Data
 		 */
-		magicDamage?: StatusModification
+		magicDamage: Nullable<StatusModification>;
 		/**
 		 * Psychological Damage Modifier Data
 		 */
-		psychDamage?: StatusModification
+		psychDamage: Nullable<StatusModification>;
 		/**
 		 * Global Damage Modifier Data
 		 */
-		globalDamage?: StatusModification
+		globalDamage: Nullable<StatusModification>;
 		/**
 		 * Physical Defense Modifier Data
 		 */
-		physDefense?: StatusModification
+		physDefense: Nullable<StatusModification>;
 		/**
 		 * Magical Defense Modifier Data
 		 */
-		magicDefense?: StatusModification
+		magicDefense: Nullable<StatusModification>;
 		/**
 		 * Psychological Defense Modifier Data
 		 */
-		psychDefense?: StatusModification
+		psychDefense: Nullable<StatusModification>;
 		/**
 		 * Global Defense Modifier Data
 		 */
-		globalDefense?: StatusModification
+		globalDefense: Nullable<StatusModification>;
 		/**
 		 * Speed Modifier Data
 		 */
-		speed?: StatusModification
+		speed: Nullable<StatusModification>;
 		/**
 		 * Mana Modifier Data
 		 */
-		mana?: StatusModification
+		mana: Nullable<StatusModification>;
 		/**
 		 * Intelligence Modifier Data
 		 */
-		intelligence?: StatusModification
+		intelligence: Nullable<StatusModification>;
 		/**
 		 * Luck Modifier Data
 		 */
-		luck?: StatusModification
+		luck: Nullable<StatusModification>;
 	}
 	/**
 	 * Internal data within the {@link Classes.Food `Classes.Food`} class
@@ -512,7 +515,7 @@ declare namespace Interfaces {
 		/**
 		 * The data type of the object
 		 */
-		type: Enums.DataType | undefined
+		type: Nullable<Enums.DataType>
 	}
 	/**
 	 * Initialization data used to initialize the
@@ -530,7 +533,7 @@ declare namespace Interfaces {
 		/**
 		 * The data type of the object
 		 */
-		type: Enums.DataType | undefined
+		type: Nullable<Enums.DataType>
 	}
 	/**
 	 * Extended version of the {@link InternalData Internal Data Interface}
@@ -647,7 +650,7 @@ declare namespace Interfaces {
 		/**
 		 * The object data for the slot
 		 */
-		obj: Classes.Block | Classes.Food | Classes.Weapon | Classes.Tool | undefined
+		obj: Nullable<Classes.Block | Classes.Food | Classes.Weapon | Classes.Tool>
 	}
 	/**
 	 * Internal data within the {@link Classes.Tool `Classes.Tool`} class
@@ -959,7 +962,7 @@ export namespace Classes {
 	 */
 	export class InternalData extends EventEmitter implements Interfaces.InternalFunctions {
 		id: number;
-		type: Enums.DataType | undefined;
+		type: Nullable<Enums.DataType>;
 		private _name: string = '';
 		constructor(data: Interfaces.InternalDataInit) {
 			super({ captureRejections: true })

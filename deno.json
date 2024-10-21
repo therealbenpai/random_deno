@@ -3,8 +3,13 @@
     "dev": "deno run --watch main.ts"
   },
   "imports": {
+    "#/": "./src/",
     "@std/assert": "jsr:@std/assert@1",
-    "#/": "./src/"
+    "@types/yargs": "npm:@types/yargs@^17.0.33",
+    "inquirer": "npm:inquirer@^12.0.0",
+    "yargs": "npm:yargs@^17.7.2",
+    "~/": "./modules/",
+    "types/helpers": "./helpers/types.ts"
   },
   "compilerOptions": {
     "strict": true

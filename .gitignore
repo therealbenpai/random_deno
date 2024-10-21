@@ -1,1 +1,6 @@
 coverage
+*.key
+*.ssl
+*.cert
+*.bin
+*.lock
