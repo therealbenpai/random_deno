@@ -6,14 +6,19 @@ on:
 
 
 jobs:
-  build:
+  test:
+    name: Code Testing
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: denoland/setup-deno@v1
+      - name: Setup Deno
+        uses: denoland/setup-deno@v1
         with:
           deno-version: v2.x
-      - run: deno test -r --coverage=./coverage/cov --doc --fail-fast --junit-path=./coverage/junit/test.xml --permit-no-files --unstable && deno coverage --lcov coverage/cov/ > coverage/cov.lcov
+      - name: Tests
+        run: deno test -r --coverage=./coverage/cov --doc --junit-path=./coverage/junit/test.xml --permit-no-files --unstable
+      - name: Code Coverage
+        run: deno coverage --lcov coverage/cov/ > coverage/cov.lcov
       - name: Upload results to Codecov
         uses: codecov/codecov-action@v4
         with:

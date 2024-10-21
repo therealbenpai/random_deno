@@ -411,55 +411,55 @@ declare namespace Interfaces {
 		/**
 		 * Health Modifier Data
 		 */
-		health: Nullable<StatusModification>;
+		health?: Nullable<StatusModification>;
 		/**
 		 * Physical Damage Modifier Data
 		 */
-		physDamage: Nullable<StatusModification>;
+		physDamage?: Nullable<StatusModification>;
 		/**
 		 * Magical Damage Modifier Data
 		 */
-		magicDamage: Nullable<StatusModification>;
+		magicDamage?: Nullable<StatusModification>;
 		/**
 		 * Psychological Damage Modifier Data
 		 */
-		psychDamage: Nullable<StatusModification>;
+		psychDamage?: Nullable<StatusModification>;
 		/**
 		 * Global Damage Modifier Data
 		 */
-		globalDamage: Nullable<StatusModification>;
+		globalDamage?: Nullable<StatusModification>;
 		/**
 		 * Physical Defense Modifier Data
 		 */
-		physDefense: Nullable<StatusModification>;
+		physDefense?: Nullable<StatusModification>;
 		/**
 		 * Magical Defense Modifier Data
 		 */
-		magicDefense: Nullable<StatusModification>;
+		magicDefense?: Nullable<StatusModification>;
 		/**
 		 * Psychological Defense Modifier Data
 		 */
-		psychDefense: Nullable<StatusModification>;
+		psychDefense?: Nullable<StatusModification>;
 		/**
 		 * Global Defense Modifier Data
 		 */
-		globalDefense: Nullable<StatusModification>;
+		globalDefense?: Nullable<StatusModification>;
 		/**
 		 * Speed Modifier Data
 		 */
-		speed: Nullable<StatusModification>;
+		speed?: Nullable<StatusModification>;
 		/**
 		 * Mana Modifier Data
 		 */
-		mana: Nullable<StatusModification>;
+		mana?: Nullable<StatusModification>;
 		/**
 		 * Intelligence Modifier Data
 		 */
-		intelligence: Nullable<StatusModification>;
+		intelligence?: Nullable<StatusModification>;
 		/**
 		 * Luck Modifier Data
 		 */
-		luck: Nullable<StatusModification>;
+		luck?: Nullable<StatusModification>;
 	}
 	/**
 	 * Internal data within the {@link Classes.Food `Classes.Food`} class
